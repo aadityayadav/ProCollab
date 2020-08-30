@@ -1,278 +1,100 @@
-{% extends 'project/basic.html' %}
-
-{% block body %}
-   <h1>I work</h1>
-   {{ls}}
-
-   {% for i in ls %}
-
-   <h1>{{i.p_name}}</h1>
-      <p>{{i.p_desc}}</p>
-      <p>{{i.p_prerequisite}}</p>
-      <p>{{i.p_part}}</p>
-      <p>{{i.p_level}}</p>
-      <p>{{i.p_category}}</p>
-      <img src="/media/{{i.p_image}}" style="width:150px; height:150px;">
-
-      <div class="row main">
-         <div class="row no-gutters">
-           <span class="border border rounded-lg">
-             <div class="col">
-               <img src="dice.png" class="card-img" />
-               <div class="card-body">
-                 <h5 class="card-title">Project name</h5>
-                 <p class="card-text">
-                   Description: Lorem ipsum dolor sit amet, consectetur adipisicing
-                   elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                   aliqua.
-                 </p>
-                 <div class="small-12 large-6 columns">
-                   <p class="coding languages">
-                     <i class="fas fa-code"></i>
-                     <a class="code">Python, C, C++, Ruby</a>
-                   </p>
-                 </div>
-                 <div class="card-footer bg-transparent border-top row">
-                   <div class="columns col-md-12">
-                     <p class="challenge-date">
-                       <i class="fas fa-users"></i> 500 participants
-                     </p>
-                   </div>
-                   <hr />
-                   <div class="col-md-6">
-                     <a class="btn btn-dark" disabled
-                       ><i class="fas fa-clipboard-list incomplete"></i>Category:
-                       Web Development</a
-                     >
-                   </div>
-                   <div class="col-md-6">
-                     <a class="btn btn-dark" disabled
-                       ><i class="far fa-arrow-alt-circle-up"></i>Level:
-                       Intermediate</a
-                     >
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </span>
-         </div>
-   
-         <div class="row no-gutters">
-           <span class="border border rounded-lg">
-             <div class="col">
-               <img src="dice.png" class="card-img" />
-               <div class="card-body">
-                 <h5 class="card-title">Project name</h5>
-                 <p class="card-text">
-                   Description: Lorem ipsum dolor sit amet, consectetur adipisicing
-                   elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                   aliqua.
-                 </p>
-                 <div class="small-12 large-6 columns">
-                   <p class="coding languages">
-                     <i class="fas fa-code"></i>
-                     <a class="code">Python, C, C++, Ruby</a>
-                   </p>
-                 </div>
-                 <div class="card-footer bg-transparent border-top row">
-                   <div class="columns col-md-12">
-                     <p class="challenge-date">
-                       <i class="fas fa-users"></i> 500 participants
-                     </p>
-                   </div>
-                   <hr />
-                   <div class="col-md-6">
-                     <a class="btn btn-dark" disabled
-                       ><i class="fas fa-clipboard-list incomplete"></i>Category:
-                       Web Development</a
-                     >
-                   </div>
-                   <div class="col-md-6">
-                     <a class="btn btn-dark" disabled
-                       ><i class="far fa-arrow-alt-circle-up"></i>Level:
-                       Intermediate</a
-                     >
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </span>
-         </div>
-       </div>
-   
-       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="l.o.y.a.l.t.y.amaan@gmail.com">Contact us</button>
-   
-       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <div class="modal-dialog" role="document">
-           <div class="modal-content">
-             <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                 <span aria-hidden="true">&times;</span>
-               </button>
-             </div>
-             <div class="modal-body">
-               <form>
-                 <div class="form-group">
-                   <label for="subject" class="col-form-label">Subject:</label>
-                   <input type="text" class="form-control" id="recipient-name">
-                 </div>
-                 <div class="form-group">
-                   <label for="message-text" class="col-form-label">Message:</label>
-                   <textarea class="form-control" id="message-text"></textarea>
-                 </div>
-               </form>
-             </div>
-             <div class="modal-footer">
-               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-               <button type="button" class="btn btn-primary">Send message</button>
-             </div>
-           </div>
-         </div>
-       </div>
-       
-       
-
-  <body>
-    <div class="row main">
-      <div class="row no-gutters">
-        <span class="border border rounded-lg">
-          <div class="col">
-            <img src="dice.png" class="card-img" />
-            <div class="card-body">
-              <h5 class="card-title">Project name</h5>
-              <p class="card-text">
-                Description: Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.
+{% extends 'project/basic.html' %} {% block body %}
+<h1>I work</h1>
+<div class="row main">
+  {{ls}} {% for i in ls %}
+  <div class="row no-gutters">
+    <span class="border border rounded-lg">
+      <div class="col">
+        <img src="/media/{{i.p_image}}" class="card-img" />
+        <div class="card-body">
+          <h5 class="card-title">{{i.p_name}}</h5>
+          <p class="card-text">{{i.p_desc}}</p>
+          <div class="small-12 large-6 columns">
+            <p class="coding languages">
+              <i class="fas fa-code"></i>
+              <a class="code">{{i.p_prerequisite}}</a>
+            </p>
+          </div>
+          <div class="card-footer bg-transparent border-top row">
+            <div class="columns col-md-12">
+              <p class="challenge-date">
+                <i class="fas fa-users"></i>{{i.p_part}}
               </p>
-              <div class="small-12 large-6 columns">
-                <p class="coding languages">
-                  <i class="fas fa-code"></i>
-                  <a class="code">Python, C, C++, Ruby</a>
-                </p>
-              </div>
-              <div class="card-footer bg-transparent border-top row">
-                <div class="columns col-md-12">
-                  <p class="challenge-date">
-                    <i class="fas fa-users"></i> 500 participants
-                  </p>
-                </div>
-                <hr />
-                <div class="col-md-6">
-                  <a class="btn btn-dark" disabled
-                    ><i class="fas fa-clipboard-list incomplete"></i>Category:
-                    Web Development</a
-                  >
-                </div>
-                <div class="col-md-6">
-                  <a class="btn btn-dark" disabled
-                    ><i class="far fa-arrow-alt-circle-up"></i>Level:
-                    Intermediate</a
-                  >
-                </div>
-              </div>
             </div>
-          </div>
-        </span>
-      </div>
-
-      <div class="row no-gutters">
-        <span class="border border rounded-lg">
-          <div class="col">
-            <img src="dice.png" class="card-img" />
-            <div class="card-body">
-              <h5 class="card-title">Project name</h5>
-              <p class="card-text">
-                Description: Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.
-              </p>
-              <div class="small-12 large-6 columns">
-                <p class="coding languages">
-                  <i class="fas fa-code"></i>
-                  <a class="code">Python, C, C++, Ruby</a>
-                </p>
-              </div>
-              <div class="card-footer bg-transparent border-top row">
-                <div class="columns col-md-12">
-                  <p class="challenge-date">
-                    <i class="fas fa-users"></i> 500 participants
-                  </p>
-                </div>
-                <hr />
-                <div class="col-md-6">
-                  <a class="btn btn-dark" disabled
-                    ><i class="fas fa-clipboard-list incomplete"></i>Category:
-                    Web Development</a
-                  >
-                </div>
-                <div class="col-md-6">
-                  <a class="btn btn-dark" disabled
-                    ><i class="far fa-arrow-alt-circle-up"></i>Level:
-                    Intermediate</a
-                  >
-                </div>
-              </div>
+            <hr />
+            <div class="col-md-6">
+              <a class="btn btn-dark" disabled
+                ><i class="fas fa-clipboard-list incomplete"></i
+                >{{i.p_category}}</a
+              >
             </div>
-          </div>
-        </span>
-      </div>
-    </div>
-
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="l.o.y.a.l.t.y.amaan@gmail.com">Contact us</button>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="subject" class="col-form-label">Subject:</label>
-                <input type="text" class="form-control" id="recipient-name">
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label">Message:</label>
-                <textarea class="form-control" id="message-text"></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Send message</button>
+            <div class="col-md-6">
+              <a class="btn btn-dark" disabled
+                ><i class="far fa-arrow-alt-circle-up"></i>{{i.p_level}}</a
+              >
+            </div>
           </div>
         </div>
       </div>
+    </span>
+  </div>
+
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-toggle="modal"
+    data-target="#exampleModal"
+    data-whatever="l.o.y.a.l.t.y.amaan@gmail.com"
+  >
+    Contact us
+  </button>
+
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="subject" class="col-form-label">Subject:</label>
+              <input type="text" class="form-control" id="recipient-name" />
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Message:</label>
+              <textarea class="form-control" id="message-text"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Send message</button>
+        </div>
+      </div>
     </div>
-
-
-    <script type="text/javascript">
-      for (var i = 0; i < document.getElementsByClassName("code").length; i++) {
-        var langArray = document.getElementsByClassName("code")[i].innerHTML;
-        langArray = langArray.split(",");
-        for (var j = 0; j < langArray.length; j++) {
-          var docu = langArray[j];
-          // var x = document.createElement("BUTTON");
-          // var t = document.createTextNode(docu);
-          // langArray.pop();
-          // x.appendChild(t);
-          // document.getElementsByClassName("code")[i].appendChild(x);
-        }
-      }
-
-      document
-        .getElementByClass("modal")
-        .addEventListener("click", function () {});
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-   {% endfor %}
-<!-- <img src="/project/media/test6.jpg" style="width:150px; height:150px;"> -->
-{% endblock %}
-
+  </div>
+  {%endfor%}
+    
+    {% endfor %}
+    <!-- <img src="/project/media/test6.jpg" style="width:150px; height:150px;"> -->
+    {% endblock %}
+  </body>
+</div>
