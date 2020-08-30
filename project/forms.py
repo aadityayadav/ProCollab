@@ -1,22 +1,19 @@
 from django.db import models
 from django import forms
-from django.forms import ModelForm
 from .models import collab_project
 
 
-
-
-
+class SearchForm(forms.Form):
+    q = forms.CharField(label='Search', max_length=32)
 
 
 class CreateNewProject(forms.ModelForm):
-
-
     class Meta:
         model = collab_project
-        fields=['p_name','p_desc','p_prerequisite','p_part','p_category','p_level','p_image']
-
-
+        fields = [
+            'p_name', 'p_desc', 'p_prerequisite', 'p_part', 'p_category',
+            'p_level', 'p_image'
+        ]
 
 
 # class CreateNewProject(forms.Form):
