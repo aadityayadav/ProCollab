@@ -1,0 +1,18 @@
+{% extends 'project/basic.html' %}
+
+{% block body %}
+   <h1>I work</h1>
+   {{ls}}
+
+   {% for i in ls %}
+
+   <h1>{{i.p_name}}</h1>
+      <p>{{i.p_desc}}</p>
+      <p>{{i.p_prerequisite}}</p>
+      <p>{{i.p_part}}</p>
+      <p>{{i.p_level}}</p>
+      <p>{{i.p_category}}</p>
+      <img src="/media/{{i.p_image}}" style="width:150px; height:150px;">
+   {% endfor %}
+<!-- <img src="/project/media/test6.jpg" style="width:150px; height:150px;"> -->
+{% endblock %}
