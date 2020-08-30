@@ -7,31 +7,13 @@ from django.db.models import Q
 
 # Create your views here.
 
-<<<<<<< HEAD
+
+def empty(request):
+    return redirect('index/')
+
+
 def index(response):
-    return render(response,'project/index.html')
-
-def create(request):
-   if request.method=="POST":
-       form = CreateNewProject(request.POST , request.FILES)
-       print(form.errors )
-       if form.is_valid():
-           messages.success(request, ('Your project has been submitted successsfully'))
-           form.save()
-       return render(request,'project/create.html',{})
-   return render(request,'project/create.html',{})
-
-def discover(response):
-    ls = collab_project.objects.all()
-    return render(request,'project/indivProject.html',{'ls':ls})
-
-
-=======
-
-def index(request):
-    ls = collab_project.objects.all()
-    return render(request, 'project/indivProject.html', {'ls': ls})
->>>>>>> 9fe27f211394d46d70ed646665e1595789365529
+    return render(response, 'project/index.html')
 
 
 def create(request):
@@ -44,6 +26,11 @@ def create(request):
             form.save()
         return render(request, 'project/create.html', {})
     return render(request, 'project/create.html', {})
+
+
+def discover(response):
+    ls = collab_project.objects.all()
+    return render(request, 'project/indivProject.html', {'ls': ls})
 
 
 def search_results(request):
