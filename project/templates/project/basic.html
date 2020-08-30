@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{%endblock%}</title>
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <style media="screen">
+      {% block css %}{% endblock %}
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-dark navbar-expand-lg navbar-light bg-dark sticky-top"
+    >
+      <a class="navbar-brand" href="#">
+        <img
+          src="data:image/jpeg;base64,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"
+          width="60"
+          height="30"
+          alt=""
+          loading="lazy"
+        />
+      </a>
+
+<<<<<<< HEAD
+   <a class="navbar-brand" href="#">
+     <img src="" width="30" height="30" alt="" loading="lazy">
+   </a>
+      <a class="navbar-brand" href="{% url 'index/' %}">ProCollab</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+=======
+      <a class="navbar-brand" href="#">
+        <img src="" width="30" height="30" alt="" loading="lazy" />
+      </a>
+      <a class="navbar-brand" href="">ProCllab</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+>>>>>>> 9fe27f211394d46d70ed646665e1595789365529
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto nav-tabs">
+          <li class="nav-item active">
+<<<<<<< HEAD
+            <a class="nav-link" href="{% url 'index/' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item active">
+         <a class="nav-link" href="{% url 'discover/' %}">Discover Projects</a>
+          </li>
+
+
+    </ul>
+    <ul class="navbar-nav ml-auto">
+  {% if loggedin %}
+         <a class="nav-link active" href="{% url 'create/' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Upload Project
+         </a>
+  {% endif %}
+         <li class="nav-item dropdown active">
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg aria-label="Profile" class="_8-yf5 " fill="#ffffff" height="16" viewBox="0 0 32 32" width="16"><path d="M16 0C7.2 0 0 7.1 0 16c0 4.8 2.1 9.1 5.5 12l.3.3C8.5 30.6 12.1 32 16 32s7.5-1.4 10.2-3.7l.3-.3c3.4-3 5.5-7.2 5.5-12 0-8.9-7.2-16-16-16zm0 29c-2.8 0-5.3-.9-7.5-2.4.5-.9.9-1.3 1.4-1.8.7-.5 1.5-.8 2.4-.8h7.2c.9 0 1.7.3 2.4.8.5.4.9.8 1.4 1.8-2 1.5-4.5 2.4-7.3 2.4zm9.7-4.4c-.5-.9-1.1-1.5-1.9-2.1-1.2-.9-2.7-1.4-4.2-1.4h-7.2c-1.5 0-3 .5-4.2 1.4-.8.6-1.4 1.2-1.9 2.1C4.2 22.3 3 19.3 3 16 3 8.8 8.8 3 16 3s13 5.8 13 13c0 3.3-1.2 6.3-3.3 8.6zM16 5.7c-3.9 0-7 3.1-7 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 11c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"></path></svg>
+                   User
+                 </a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   <a class="dropdown-item" href="{% url 'login/' %}">Log in</a>
+                   <a class="dropdown-item" href="">Log out</a>
+                   <div class="dropdown-divider"></div>
+                   <a class="dropdown-item" href="{% url 'register/' %}">Sign Up</a>
+                 </div>
+               </li>
+
+
+          </ul>
+
+
+=======
+            <a class="nav-link" href="/"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Discover Projects</a>
+          </li>
+        </ul>
+        <form class="col-sm-2" action="{% url 'search' %}" method="get">
+          <input
+            class="form-control"
+            name="q"
+            type="text"
+            placeholder="Search"
+          />
+        </form>
+        <ul class="navbar-nav ml-auto">
+          <a
+            class="nav-link active"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            My Projects
+          </a>
+          <li class="nav-item dropdown active">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              ><svg
+                aria-label="Profile"
+                class="_8-yf5"
+                fill="#ffffff"
+                height="16"
+                viewBox="0 0 32 32"
+                width="16"
+              >
+                <path
+                  d="M16 0C7.2 0 0 7.1 0 16c0 4.8 2.1 9.1 5.5 12l.3.3C8.5 30.6 12.1 32 16 32s7.5-1.4 10.2-3.7l.3-.3c3.4-3 5.5-7.2 5.5-12 0-8.9-7.2-16-16-16zm0 29c-2.8 0-5.3-.9-7.5-2.4.5-.9.9-1.3 1.4-1.8.7-.5 1.5-.8 2.4-.8h7.2c.9 0 1.7.3 2.4.8.5.4.9.8 1.4 1.8-2 1.5-4.5 2.4-7.3 2.4zm9.7-4.4c-.5-.9-1.1-1.5-1.9-2.1-1.2-.9-2.7-1.4-4.2-1.4h-7.2c-1.5 0-3 .5-4.2 1.4-.8.6-1.4 1.2-1.9 2.1C4.2 22.3 3 19.3 3 16 3 8.8 8.8 3 16 3s13 5.8 13 13c0 3.3-1.2 6.3-3.3 8.6zM16 5.7c-3.9 0-7 3.1-7 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 11c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"
+                ></path>
+              </svg>
+              User
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Log in</a>
+              <a class="dropdown-item" href="#">Log out</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Sign Up</a>
+            </div>
+          </li>
+        </ul>
+>>>>>>> 9fe27f211394d46d70ed646665e1595789365529
+      </div>
+    </nav>
+
+    {%block body%}{%endblock%}
+
+    <script>
+      {%block js%}{% endblock %}
+    </script>
+  </body>
+</html>
